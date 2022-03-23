@@ -52,12 +52,15 @@
 
 
     <script>
+        let imageFiles = [
+            "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80",
+            "image2.jpg"];
+
         let images = document.querySelectorAll(".gallery img");
         let lightboxImg = document.querySelector(".lightbox img");
         let lightboxDiv = document.querySelector(".lightbox");
         images.forEach(function(image){
-            
-            image.onclick = function(){
+           image.onclick = function(){
                 lightboxImg.setAttribute("src",image.getAttribute("src"));
                 lightboxDiv.style.display="flex";
             }
@@ -66,7 +69,10 @@
             lightboxDiv.style.display="none";
         }
 
-
+        // 1. сгенерировать картинки из цикла 
+        // 2. Используя дополнительный атрибут Title ввыести названия картинок
+        // 3. Добавить крестики которые будут закрывать картинки
+        // 4* Сделать прокрутку изображений
 
     </script>
 </body>
