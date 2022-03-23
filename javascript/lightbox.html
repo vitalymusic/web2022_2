@@ -33,8 +33,6 @@
          .lightbox img{
              width: 70%;
              border:3px solid white;
-
-
          }
          
          
@@ -43,7 +41,7 @@
 <body>
     <div class="gallery">
         <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
-        <img src="https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=20&m=1093110112&s=612x612&w=0&h=3OhKOpvzOSJgwThQmGhshfOnZTvMExZX2R91jNNStBY=" alt="">
+        <img src="https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=20&m=1093110112&s=612x612&w=0&h=3OhKOpvzOSJgwThQmGhshfOnZTvMExZX2R91jNNStBY=" alt="" title="">
         <img src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=" alt="">
         <img src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg" alt="">
     </div>
@@ -51,5 +49,25 @@
     <div class="lightbox">
         <img src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg" alt="">
     </div>
+
+
+    <script>
+        let images = document.querySelectorAll(".gallery img");
+        let lightboxImg = document.querySelector(".lightbox img");
+        let lightboxDiv = document.querySelector(".lightbox");
+        images.forEach(function(image){
+            
+            image.onclick = function(){
+                lightboxImg.setAttribute("src",image.getAttribute("src"));
+                lightboxDiv.style.display="flex";
+            }
+        });
+        lightboxDiv.onclick = function(){
+            lightboxDiv.style.display="none";
+        }
+
+
+
+    </script>
 </body>
 </html>
