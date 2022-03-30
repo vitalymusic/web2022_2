@@ -133,16 +133,19 @@
         });
 
         rightBtn.addEventListener("click",function(){
-        i++;   
-        if(i>imageFiles.length-1){
+            changeSlides();
+        });
+
+        function changeSlides(){
+            i++;   
+             if(i>imageFiles.length-1){
             i=0;
         }
         
         lightboxImg.setAttribute("src", imageFiles[i].url);
         lightboxImgTitle.innerText = imageFiles[i].title;
         console.log(i);
-        });
-
+        }
 
 
         lightboxDiv.onclick = function(event){
@@ -153,6 +156,9 @@
             
         }
 
+        setInterval(function(){
+            changeSlides();
+        },3000)
 
         // 1. сгенерировать картинки из цикла 
         // 2. Используя дополнительный атрибут Title ввыести названия картинок
