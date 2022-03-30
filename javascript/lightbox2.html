@@ -119,32 +119,34 @@
             }
         });
         
-        let i=imageFiles.length-1;
-
+        let i=0;
+        console.log(i);
         leftBtn.addEventListener("click",function(){
-
+            i--;
             if(i<0){
                 i=imageFiles.length-1;
             }
-            lightboxImg.setAttribute("src", imageFiles[i--].url);
-            lightboxImgTitle.innerText = imageFiles[i--].title;
-            console.log(imageFiles[i]);
+            
+            lightboxImg.setAttribute("src", imageFiles[i].url);
+            lightboxImgTitle.innerText = imageFiles[i].title;
+            console.log(i);
         });
 
         rightBtn.addEventListener("click",function(){
-
+        i++;   
         if(i>imageFiles.length-1){
             i=0;
         }
-        lightboxImg.setAttribute("src", imageFiles[i++].url);
-        lightboxImgTitle.innerText = imageFiles[i++].title;
-        console.log(imageFiles[i]);
+        
+        lightboxImg.setAttribute("src", imageFiles[i].url);
+        lightboxImgTitle.innerText = imageFiles[i].title;
+        console.log(i);
         });
 
 
 
         lightboxDiv.onclick = function(event){
-            console.log(event.target);
+            
             if(event.target==lightboxDiv){
                 lightboxDiv.style.display="none";
             }
