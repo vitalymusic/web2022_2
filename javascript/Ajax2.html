@@ -21,19 +21,21 @@
         form.onsubmit = (event)=>{
             event.preventDefault();
             formdata = new FormData(form);
+            formdata.append("title","testing user");
             sendData('POST','https://jsonplaceholder.typicode.com/posts',formdata);
         }
 
 
         function sendData(type,url,formdata){
         xhr = new XMLHttpRequest();
-
+                 
         xhr.onreadystatechange = ()=>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 console.log(xhr.response);
             }
         }
         xhr.open(type,url);
+        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(formdata);
 
 
